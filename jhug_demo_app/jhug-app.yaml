@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golden-pipeline-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: golden-pipeline-deployment
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: golden-pipeline-deployment
+    spec:
+      containers:
+        - name: gpsimpleap
+          image: kaneofthrones/jhug-app:2.0
+          ports:
+            - containerPort: 8000
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: golden-pipeline-deployment
+spec:
+  selector:
+    app: golden-pipeline-deployment
+  ports:
+    - port: 80
+      targetPort: 8000
+  type: LoadBalancer
