@@ -1,0 +1,44 @@
+{
+  "name": "simple-app",
+  "version": "4.0.0",
+  "description": "A Simple node js based web app involving a CI pipeline and testing",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattible/Simple-App.git"
+  },
+  "keywords": [
+    "docker",
+    "node",
+    "js",
+    "app",
+    "http",
+    "simple",
+    "CI",
+    "travis",
+    "testing"
+  ],
+  "author": "Matthew Callinan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mattible/Simple-App/issues"
+  },
+  "homepage": "https://github.com/Mattible/Simple-App#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "express": "^4.16.4",
+    "mocha": "^6.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-node": "^8.0.1"
+  }
+}
