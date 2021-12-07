@@ -25,7 +25,12 @@ terraform {
       version = ">= 2.0.1"
     }
   }
-
   required_version = ">= 0.14"
+
+  backend "s3" {
+    bucket = "dev-application-layer-terraform"
+    key    = "dev-terraform_state"
+    region = "eu-west-2"
+  }
 }
 
