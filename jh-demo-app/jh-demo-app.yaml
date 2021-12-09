@@ -16,7 +16,7 @@ spec:
         - name: app
           image: huggardj/simple-app:1.0
           ports:
-            - containerPort: 8000
+            - containerPort: 8080
           imagePullPolicy: Always
 ---
 apiVersion: v1
@@ -29,5 +29,5 @@ spec:
   ports:
     - name: "http" 
       port: 80
-      targetPort: 8000
+      targetPort: 8080
   type: LoadBalancer
