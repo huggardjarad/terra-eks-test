@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: km-demo-app
+  name: jh-demo-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: km-demo-app
+      app: jh-demo-app
   template:
     metadata:
       labels:
-        app: km-demo-app
+        app: jh-demo-app
     spec:
       containers:
         - name: app
-          image: kaneofthrones/demo-app:1080
+          image: huggardj/simple-app:1.0
           ports:
-            - containerPort: 80
+            - containerPort: 8000
           imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: km-demo-app
+  name: jh-demo-app
 spec:
   selector:
-    app: km-demo-app
+    app: jh-demo-app
   ports:
     - name: "http" 
       port: 80
-      targetPort: 80
+      targetPort: 8000
   type: LoadBalancer
